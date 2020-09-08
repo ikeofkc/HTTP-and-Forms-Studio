@@ -18,7 +18,7 @@ div {
 }
 
 form {
-    padding-left: 100px;
+    padding-left: 95px;
     padding-bottom: 30px;
 }
 
@@ -28,4 +28,11 @@ h1 {
     font-size: 40;
     color: #302c70;
     text-align: center;
+}
+
+button {
+    border-radius: 50;
+    background-color: #5f58cc;
+    color: #ffffff;
+
 }
