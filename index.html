@@ -16,8 +16,11 @@
 		function setSearchEngine(event) {
 			let selectedEngine = document.querySelector("input[name=engine]:checked");
 			let inputText = document.querySelector("input[name=q]").value;
-			if (selectedEngine === null || inputText === "") {
+			if (selectedEngine === null) {
 				alert("Please select engine")
+				event.preventDefault();
+			} else if (inputText === "") {
+				alert("I need something to search!")
 				event.preventDefault();
 			} else {
 				let engineName = selectedEngine.value;
