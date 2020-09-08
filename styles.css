@@ -18,7 +18,7 @@ div {
 }
 
 form {
-    padding-left: 95px;
+    padding-left: 100px;
     padding-bottom: 30px;
 }
 
@@ -31,8 +31,20 @@ h1 {
 }
 
 button {
-    border-radius: 50;
+    border-radius: 7px;
+    border-width: 0px;
     background-color: #5f58cc;
+    font-family: 'Jost', sans-serif;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #ffffff;
+}
 
+#queryWord {
+    font-family: 'Jost', sans-serif;
+    width: 200px;
+    border-radius: 7px;
+    padding: 5px;
+    margin-left: -30px;
 }
