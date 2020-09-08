@@ -15,13 +15,14 @@
 
 		function setSearchEngine(event) {
 			let selectedEngine = document.querySelector("input[name=engine]:checked");
-			if (selectedEngine === null) {
+			let inputText = document.querySelector("input[name=q]").value;
+			if (selectedEngine === null || inputText === "") {
 				alert("Please select engine")
 				event.preventDefault();
 			} else {
 				let engineName = selectedEngine.value;
 				document.getElementById("searchForm").action = actions[engineName];
-				console.log(document.getElementById("searchForm").action)
+				console.log(inputText)
 				// event.preventDefault();
 			}
 		}
