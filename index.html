@@ -2,27 +2,53 @@
 
 <head>
 	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script>
+
+		let actions = {
+			"google": "https://www.google.com/search",
+			"duckDuckGo": "https://duckduckgo.com/",
+			"bing":"https://www.bing.com/search",
+			"ask":"https://www.ask.com/web",
+		}
+
 		function setSearchEngine(event) {
-			console.log("ran setSearchEngine")
+			let selectedEngine = document.querySelector("input[name=engine]:checked");
+			if (selectedEngine === null) {
+				alert("Please select engine")
+				event.preventDefault();
+			} else {
+				let engineName = selectedEngine.value;
+				document.getElementById("searchForm").action = actions[engineName];
+				console.log(document.getElementById("searchForm").action)
+				// event.preventDefault();
+			}
 		}
 
 		window.addEventListener("load", function(){
-			let form = document.getElementById("searchForm");
-			form.addEventListener("submit", setSearchEngine)
+			let form = document.getElementById("searchForm"); // or can use querySelector("form") but not specific
+			form.addEventListener("submit", setSearchEngine);
 		});
 	</script>
 </head>
 
 <body>
-
-	<form id="searchForm">
-		<input type="text" name="q"/>
-		<label>Google<input type="radio" name="engine" value="google"></label>
-		<label>Duck Duck Go<input type="radio" name="engine" value="duckDuckGo"></label>
-		<label>Bing<input type="radio" name="engine" value="bing"></label>
-		<label>Ask<input type="radio" name="engine" value="ask"></label>
+<div>
+	<h1>Pick Yer Serch</h1>
+	<form id="selection">
+		<label><input type="radio" name="engine" value="google">Google</label><br>
+		<label><input type="radio" name="engine" value="duckDuckGo">Duck Duck Go!</label><br>
+		<label><input type="radio" name="engine" value="bing">Bing</label><br>
+		<label><input type="radio" name="engine" value="ask">Ask</label><br>
+	</form>
+</div>
+<div>
+	<h1>What you want?</h1>
+	<form id="searchForm" action="">
+		<input id="queryWord" type="text" name="q"/>
 		<button value="userQuery">Submit</button>
 	</form>
-
+</div>
+	
 </body>
